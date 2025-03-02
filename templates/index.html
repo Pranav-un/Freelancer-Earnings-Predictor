@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelancer Earnings Predictor</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Freelancer Earnings Predictor</h1>
+        <p>Estimate your earnings based on your work metrics</p>
+      </header>
+
+      <div class="model-toggle">
+        <label class="switch">
+          <input type="checkbox" id="model-toggle-input" />
+          <span class="slider round"></span>
+        </label>
+        <div class="toggle-labels">
+          <span class="active" id="slr-label">Simple Model</span>
+          <span id="mlr-label">Advanced Model</span>
+        </div>
+      </div>
+
+      <div class="prediction-container">
+        <!-- Simple Linear Regression Form -->
+        <div class="model-form active" id="slr-form">
+          <h2>Simple Earnings Prediction</h2>
+          <p>Predict earnings based only on hours worked</p>
+
+          <div class="form-group">
+            <label for="slr-hours">Hours Worked (per week):</label>
+            <input
+              type="number"
+              id="slr-hours"
+              min="1"
+              max="168"
+              value="40"
+              step="0.5"
+              required
+            />
+          </div>
+
+          <button id="slr-predict-btn" class="predict-btn">
+            Predict Earnings
+          </button>
+        </div>
+
+        <!-- Multiple Linear Regression Form -->
+        <div class="model-form" id="mlr-form">
+          <h2>Advanced Earnings Prediction</h2>
+          <p>Predict earnings based on multiple factors</p>
+
+          <div class="form-group">
+            <label for="mlr-hours">Hours Worked (per week):</label>
+            <input
+              type="number"
+              id="mlr-hours"
+              min="1"
+              max="168"
+              value="40"
+              step="0.5"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="mlr-clients">Number of Clients:</label>
+            <input
+              type="number"
+              id="mlr-clients"
+              min="1"
+              max="50"
+              value="3"
+              step="1"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="mlr-skill">Skill Level (1-10):</label>
+            <input
+              type="range"
+              id="mlr-skill"
+              min="1"
+              max="10"
+              value="7"
+              step="0.5"
+              required
+            />
+            <span id="skill-value">7</span>
+          </div>
+
+          <div class="form-group">
+            <label for="mlr-rating">Client Rating (3-5):</label>
+            <input
+              type="range"
+              id="mlr-rating"
+              min="3"
+              max="5"
+              value="4.5"
+              step="0.1"
+              required
+            />
+            <span id="rating-value">4.5</span>
+          </div>
+
+          <button id="mlr-predict-btn" class="predict-btn">
+            Predict Earnings
+          </button>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results" id="results">
+          <h2>Estimated Weekly Earnings</h2>
+          <div class="result-card">
+            <div class="amount" id="prediction-amount">$0.00</div>
+            <div class="details" id="prediction-details"></div>
+            <div class="model-accuracy" id="model-accuracy"></div>
+          </div>
+
+          <div class="explanation">
+            <h3>How this works:</h3>
+            <p id="model-explanation">
+              This prediction is based on the relationship between hours worked
+              and typical freelancer earnings.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          © 2025 Freelancer Earnings Predictor | Built with Flask & Linear
+          Regression
+        </p>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
