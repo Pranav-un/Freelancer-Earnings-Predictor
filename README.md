@@ -2,7 +2,7 @@
 
 📌 Overview
 
-The Freelancer Earnings Predictor is a simple web application that allows users to estimate freelancer earnings using Simple Linear Regression (SLR) and Multiple Linear Regression (MLR). The application is built with Flask for the backend and HTML, CSS, and JavaScript for the frontend.
+The Freelancer Earnings Predictor is a simple web application that allows users to estimate freelancer earnings using Simple Linear Regression (SLR) and Multiple Linear Regression (MLR). The application is built with Flask for the backend and HTML, CSS, and JavaScript for the frontend
 
 🛠️ Tech Stack
 
