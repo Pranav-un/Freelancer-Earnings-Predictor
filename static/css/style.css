@@ -274,7 +274,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
+/* Responsive Designs */
 @media (max-width: 768px) {
   .prediction-container {
     flex-direction: column;
